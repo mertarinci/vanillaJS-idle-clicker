@@ -260,3 +260,12 @@ footer {
   background-color: white;
   gap: 30px;
 }
+
+.resetGame:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.resetGame:active {
+  color: rgba(255, 0, 0, 0.5);
+}

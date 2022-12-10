@@ -1,7 +1,4 @@
 
-
-
-
 // DATA
 
 let gameData = {
@@ -95,12 +92,16 @@ const carProductionSpan = document.querySelector(".carCollect")
 const oliWorkerSpan = document.querySelector(".oliWorker")
 const oliProductionSpan = document.querySelector(".oliCollect")
 const hoverForInfo = document.querySelector(".popover-title")
+const resetGameBtn = document.querySelector(".resetGame")
+
 
 
 
 
 
 // Event Listeners
+
+resetGameBtn.addEventListener("click", resetGame)
 
 hoverForInfo.addEventListener("mouseenter", function () {
     document.querySelector(".popover-content").style.visibility = "visible"
@@ -141,11 +142,31 @@ function unlockButtonsListener(unlockBtn) {
 }
 
 
+
+
 upgradeStorageBtn.addEventListener("click", upgradeStorage)
 buyWorkerBtn.addEventListener("click", buyWorker)
 
 // Functions 
 
+function resetGame(e) {
+
+    const answer = confirm("Your progress is going to reset. \n\n Are you sure?")
+
+    if (answer) {
+
+        const answer = confirm("Last chance! \n \nAre you certain?")
+
+        if (answer) {
+            localStorage.clear()
+            location.reload()
+
+        }
+
+    }
+
+
+}
 
 function collectProduct(e) {
 
@@ -492,6 +513,9 @@ function loadSavedGame() {
         gameData.totalMoney = savedGame.totalMoney
         gameData.worker.lemon = savedGame.worker.lemon
         gameData.worker.count = savedGame.worker.count
+        gameData.worker.carrot = savedGame.worker.carrot
+        gameData.worker.cucumber = savedGame.worker.cucumber
+        gameData.worker.olive = savedGame.worker.olive
         gameData.storageLevel = savedGame.storageLevel
         gameData.cucumber.count = savedGame.cucumber.count
         gameData.cucumber.isLocked = savedGame.cucumber.isLocked
