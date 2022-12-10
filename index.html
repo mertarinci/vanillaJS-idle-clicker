@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdleGarden</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="https://www.favicon.cc/logo3d/898396.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="title">
+        <h1 class="username"></h1>
+        <div class="userData">
+            <span class="totalMoney">Money: 0$</span>
+            <hr>
+            <span class="totalWorkers">Workers: 0</span>
+            <hr>
+            <span>Test: 0</span>
+            <hr>
+            <span class="popover-title"><i class="fa-solid fa-circle-info"></i> Hover for info
+                <div class="popover-content">
+                    - You have to <span style="font-weight:bold; color: red;">click icons</span> to farm.
+                    <br><br>
+                    - You can <span style="font-weight: bold; color: green;">buy worker</span> for automated farm.
+                    <br><br>
+                    - This game is <span style="font-weight: bold; color: blue;">still in development.</span> Thanks for
+                    your patience.
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="fields">
+            <div class="row">
+                <div class="lemon field">
+                    <h2>Lemon Field</h2>
+
+                    <i data-product="lemon" class="fa-solid fa-lemon"></i>
+
+
+                    <div class="worker">
+                        <button data-product="lemon" class="deleteWorker">-</button>
+                        <div class="workerInfo">
+                            <h3><span class="lemonWorkers"></span> Active Workers</h3>
+                            <span class="lemonProd">Production Speed: <span class="lemonCollect"></span></span>
+                        </div>
+                        <button data-product="lemon" class="addWorker">+</button>
+                    </div>
+
+
+                </div>
+
+                <div class="cucumber field">
+
+
+                    <h2>Cucumber Field</h2>
+
+                    <div class="locked cucuLocked">
+                        <h1>LOCKED</h1>
+                        <button data-product="cucumber" class="unlockBtn">250 Lemons to Open
+                        </button>
+                    </div>
+
+                    <i data-product="cucumber" class="fa-solid fa-c cucuHidden"></i>
+
+                    <div class="worker cucuHidden">
+                        <button class="deleteWorker" data-product="cucumber">-</button>
+                        <div class="workerInfo">
+                            <h3><span class="cucuWorker"></span> Active Workers</h3>
+                            <span class="cucuProd">Production Speed: <span class="cucuCollect"></span></span>
+                        </div>
+                        <button class="addWorker" data-product="cucumber">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="carrot field">
+                    <h2>Carrot Field</h2>
+
+                    <div class="locked carLocked">
+                        <h1>LOCKED</h1>
+                        <button data-product="carrot" class="unlockBtn">2560 Cucumbers to Open
+                        </button>
+                    </div>
+
+
+                    <i data-product="carrot" class="fa-solid fa-carrot carHidden"></i>
+
+                    <div class="worker carHidden">
+                        <button class="deleteWorker" data-product="carrot">-</button>
+                        <div class="workerInfo">
+                            <h3><span class="carWorker"></span> Active Workers</h3>
+                            <span class="carProd">Production Speed: <span class="carCollect"></span></span>
+                        </div>
+                        <button class="addWorker" data-product="carrot">+</button>
+                    </div>
+                </div>
+                <div class="olive field">
+                    <h2>Olive Field</h2>
+
+                    <div class="locked oliLocked">
+                        <h1>LOCKED</h1>
+                        <button data-product="olive" class="unlockBtn">4000 Carrots to Open
+                        </button>
+                    </div>
+
+                    <i data-product="olive" class="fa-solid fa-bottle-droplet oliHidden"></i>
+
+                    <div class="worker oliHidden">
+                        <button class="deleteWorker" data-product="olive">-</button>
+                        <div class="workerInfo">
+                            <h3><span class="oliWorker"></span> Active Workers</h3>
+                            <span class="oliProd">Production Speed: <span class="oliCollect"></span></span>
+                        </div>
+                        <button class="addWorker" data-product="olive">+</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rightMenu">
+            <div class="storage menu-item">
+                <h3>Storage [ Level : <span class="storageLevel"></span> ]</h3>
+                <span class="storage-item">Lemon: <span class="lemonCount"></span> / <span
+                        class="storageCapacity"></span>
+                </span>
+                <span class="storage-item">Cucumber: <span class="cucumberCount"></span> / <span
+                        class="storageCapacity"></span> </span>
+                <span class="storage-item">Carrot: <span class="carrotCount"></span> / <span
+                        class="storageCapacity"></span> </span>
+                <span class="storage-item">Olive: <span class="oliveCount"></span> / <span
+                        class="storageCapacity"></span>
+                </span>
+            </div>
+            <div class="market menu-item">
+                <h3>Market</h3>
+                <div class="market-items">
+                    <button data-product="lemon" class="market-item market-lemon">Sell Lemon (5$)</button>
+                    <button data-product="cucumber" class="market-item market-cucumber">Sell Cucumber (20$)
+                    </button>
+                    <button data-product="carrot" class="market-item market-carrot">Sell Carrot (100$) </button>
+                    <button data-product="olive" class="market-item market-olive">Sell Olive (300$) </button>
+                </div>
+
+
+            </div>
+            <div class="upgrades menu-item">
+                <h3>Upgrades & Worker Market</h3>
+                <div class="upgrade-items">
+                    <button class="upgradeStorage up-item">Upgrade Storage [<span class="storagePrice"></span>
+                        ]</button>
+                    <button class="buyWorker up-item">Buy Worker [ <span class="workerPrice"></span> ]</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <h3>Game by Mert A.</h3>
+        <h3>2022</h3>
+        <h3>v.1.0</h3>
+    </footer>
+
+</body>
+
+<script src="./app.js"></script>
+
+</html>

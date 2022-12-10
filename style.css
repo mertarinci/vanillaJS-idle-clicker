@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.title {
+  background-color: antiquewhite;
+  text-align: center;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 200px;
+}
+
+.popover-title {
+  position: relative;
+  cursor: pointer;
+}
+
+.popover-title:hover {
+  color: rgb(87, 87, 255);
+  position: relative;
+}
+
+.popover-content {
+  position: absolute;
+  padding: 30px;
+  height: 250px;
+  width: 300px;
+  background-color: #fff;
+  color: black;
+  top: 40px;
+  left: -100px;
+  border-radius: 20px;
+  text-align: justify;
+  visibility: hidden;
+}
+
+.userData {
+  display: flex;
+  gap: 20px;
+}
+
+.container {
+  background-color: antiquewhite;
+  height: calc(100vh - 70px);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.fields {
+  width: 50%;
+  height: 100%;
+  flex: 2;
+  gap: 20px;
+}
+
+.row {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.field {
+  background-color: #fff;
+  height: 90%;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.olive h1,
+.cucumber h1,
+.carrot h1 {
+  color: red;
+}
+
+.cucuHidden {
+  visibility: hidden;
+}
+
+.carHidden {
+  visibility: hidden;
+}
+
+.oliHidden {
+  visibility: hidden;
+}
+
+.worker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.worker button {
+  width: 50px;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  font-size: 24px;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+.worker button:active {
+  background-color: inherit;
+  border: 1px solid rgba(255, 0, 0, 0.8);
+  color: rgba(255, 0, 0, 0.8);
+}
+
+.rightMenu {
+  background-color: #fff;
+  width: 100%;
+  height: 95%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.menu-item {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.lemon {
+  background-color: rgba(255, 255, 0, 0.4);
+}
+
+.field i {
+  font-size: 64px;
+  cursor: pointer;
+}
+
+.cucumber {
+  background-color: rgba(0, 255, 0, 0.4);
+  position: relative;
+}
+
+.locked {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: absolute;
+  top: 30%;
+  left: 17%;
+}
+.unlockBtn {
+  width: 300px;
+  height: 100px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.carrot {
+  background-color: rgba(255, 166, 0, 0.4);
+  position: relative;
+}
+
+.olive {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.storage {
+  flex: 1;
+  background-color: rgba(125, 35, 35, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.storage h3 {
+  align-self: center;
+}
+
+.market {
+  flex: 1;
+  background-color: rgba(0, 255, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.market-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.market h3 {
+  align-self: center;
+}
+
+.market-item {
+  width: 45%;
+  height: 45%;
+  font-size: 16px;
+  font-weight: bold;
+}
+.upgrades {
+  flex: 2;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.market-lemon {
+  order: 1;
+}
+.market-cucumber {
+  order: 3;
+}
+.market-carrot {
+  order: 2;
+}
+.market-olive {
+  order: 4;
+}
+
+.upgrade-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.up-item {
+  width: 50%;
+  height: 50px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+footer {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  gap: 30px;
+}
