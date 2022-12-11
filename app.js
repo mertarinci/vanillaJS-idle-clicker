@@ -22,7 +22,6 @@ let gameData = {
         price: 300,
         isLocked: true
     },
-
     worker: {
         count: 0,
         price: function () { return (this.totalCount() + 1) * 35 },
@@ -40,7 +39,6 @@ let gameData = {
         oliveCollect: 0.05,
         totalOliveProd: function () { return this.olive * this.oliveCollect },
     },
-
     totalMoney: 0,
     storageLevel: 1,
     storageCapacity: function () { return Math.pow(this.storageLevel, 2) * 10 },
@@ -53,7 +51,6 @@ let gameData = {
 // let username = prompt("Please enter your name", "Mert")
 // gameData.username = username.substring(0, 10)
 
-document.querySelector(".username").innerHTML = `${gameData.username}'s Garden`
 
 
 
@@ -499,7 +496,7 @@ function autoSave() {
 
         localStorage.setItem("gameData", JSON.stringify(gameData))
 
-    }, 10000)
+    }, 1000)
 }
 
 function loadSavedGame() {
@@ -554,6 +551,7 @@ function updateUI() {
     carProductionSpan.innerHTML = `${Math.floor(gameData.worker.totalCarrotProd() * 100) / 100}`
     oliWorkerSpan.innerHTML = gameData.worker.olive;
     oliProductionSpan.innerHTML = `${Math.floor(gameData.worker.totalOliveProd() * 100) / 100}`
+    document.querySelector(".username").innerHTML = `${gameData.username}'s Garden`
 
 
 
@@ -624,13 +622,16 @@ function unlockZone(e) {
 
 function cheater() {
 
-    gameData.storageLevel = 999
+    gameData.storageLevel += 20
+    gameData.lemon.count += 400
+    gameData.cucumber.count += 400
+    gameData.carrot.count += 400
+    gameData.olive.count += 400
+    gameData.worker.count += 100
+    gameData.username = "Cheater"
+    gameData.totalMoney += 50000
 
-    gameData.lemon.count = 999
-    gameData.cucumber.count = 999
-    gameData.carrot.count = 999
-    gameData.olive.count = 999
-    gameData.worker.count = 999
+    updateUI()
 }
 
 
